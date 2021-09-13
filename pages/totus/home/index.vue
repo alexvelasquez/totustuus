@@ -141,12 +141,12 @@ export default {
     },
 
     async eliminarPedido() {
-      const item = this.pedidos[indexSeleccionado]
+      const item = this.pedidos[this.indexSeleccionado]
       const response = await this.$axios.delete(
         `/auth/user/pedidos/${item.pedidoId}`
       )
       if (response.status == 200) {
-        this.pedidos = this.pedidos.slice(indexSeleccionado, 1)
+        this.pedidos.splice(this.indexSeleccionado, 1)
         this.preguntar = false
       }
     },
@@ -158,8 +158,8 @@ export default {
       this.totalItemsPedido = precios.reduce((ant, current) => ant + current)
     },
     seleccionarEliminado(index) {
-      indexSeleccionado = index
-      preguntar = true
+      this.indexSeleccionado = index
+      this.preguntar = true
     },
   },
 }

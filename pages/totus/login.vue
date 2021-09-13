@@ -10,18 +10,20 @@
           <div class="con-form">
             <v-text-field
               class="mt-2"
+
               v-model="auth.username"
               outlined
-              label="Username"
-              placeholder="0"
+              label="Usuario"
+              placeholder="Usuario"
               dense
             ></v-text-field>
             <v-text-field
               class="mt-2"
               v-model="auth.password"
               outlined
-              label="Password"
-              placeholder="0"
+              label="Contraseña"
+              type="password"
+              placeholder="Contraseña"
               dense
             ></v-text-field>
           </div>
