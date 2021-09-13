@@ -37,11 +37,11 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'http://localhost:8000',
+      target: process.env.API_ENDPOINT,
       pathRewrite: { "^/api/": "" },
     },
     "/auth": {
-      target: 'http://localhost:8000/',
+      target: process.env.API_ENDPOINT,
       pathRewrite: { "^/auth/": "/api/" }
     }
   },
